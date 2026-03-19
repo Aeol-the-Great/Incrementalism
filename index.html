@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Incrementalism V2</title>
+    
+    <!-- TAILWIND PLAY CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              orbitron: ['Orbitron', 'sans-serif'],
+              inter: ['Inter', 'sans-serif'],
+            },
+          }
+        }
+      }
+    </script>
+    
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+      :root {
+        color-scheme: dark;
+        background-color: #090a0f;
+      }
+      body {
+        margin: 0;
+        background-color: #090a0f;
+        overflow: hidden;
+      }
+      @keyframes glow-pulse {
+        0% { box-shadow: 0 0 5px rgba(125,211,252,0.2); }
+        50% { box-shadow: 0 0 20px rgba(125,211,252,0.5); }
+        100% { box-shadow: 0 0 5px rgba(125,211,252,0.2); }
+      }
+      .glow-node { animation: glow-pulse 2s infinite ease-in-out; }
+      .hex-border { transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1); }
+      .hex-border:hover { filter: drop-shadow(0 0 8px #7dd3fc); stroke-width: 3; }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- ZERO-BUILD ENTRY POINT -->
+    <script type="module" src="./game.js"></script>
+  </body>
+</html>
